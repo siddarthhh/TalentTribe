@@ -1,0 +1,53 @@
+/* General Container Styling */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Table Styling */
+  .table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  /* Hover Effect */
+  .table-striped tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+  }
+  
+  /* Headings Styling */
+  h2 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Spacing Between Sections */
+  .mt-5 {
+    margin-top: 40px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .table {
+      font-size: 0.9rem;
+    }
+  }
+  

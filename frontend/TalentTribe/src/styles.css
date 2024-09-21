@@ -1,0 +1,211 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    background-image: url('../../TalentTribe/public/assets/gettyimages-1183978184-2048x2048.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: hwb(0 100% 0% / 0.900); /* Slightly transparent for a clean look */
+    background-blend-mode: lighten;
+    color: #333; /* Neutral font color for readability */
+    line-height: 1.6; /* Better line spacing */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; /* Make headings bold */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.3; /* Tighter heading line spacing */
+}
+
+p {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    font-size: 1rem;
+    color: #555; /* Softer text color for paragraphs */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+a:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+
+.pt-1 { padding-top: 0.25rem; }
+.pt-2 { padding-top: 0.5rem; }
+.pt-3 { padding-top: 1rem; }
+.pt-4 { padding-top: 1.5rem; }
+
+.pb-1 { padding-bottom: 0.25rem; }
+.pb-2 { padding-bottom: 0.5rem; }
+.pb-3 { padding-bottom: 1rem; }
+.pb-4 { padding-bottom: 1.5rem; }
+
+/* Responsive Grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-md-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+.col-md-8 {
+    flex: 0 0 66.66%;
+    max-width: 66.66%;
+}
+
+.col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card h5 {
+    margin-top: 0;
+    font-weight: 500;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+tbody td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .col-md-6, .col-md-4, .col-md-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

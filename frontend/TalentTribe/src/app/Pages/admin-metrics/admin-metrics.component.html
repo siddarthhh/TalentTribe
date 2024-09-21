@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <h2>Companies with Most Jobs</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Job Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companiesWithMostJobs">
+          <td>{{ company.companyName }}</td>
+          <td>{{ company.jobCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h2 class="mt-5">Employers with Most Jobs</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Employer Name</th>
+          <th>Job Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employer of employersWithMostJobs">
+          <td>{{ employer.employerName }}</td>
+          <td>{{ employer.jobCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
