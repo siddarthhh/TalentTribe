@@ -1,0 +1,214 @@
+/* Container styling */
+.container {
+    max-width: 1200px;
+  }
+  
+  /* Header */
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  /* Table styles */
+  .table {
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  /* Alert message */
+  .alert-info {
+    font-size: 1.1rem;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  /* Badge styles */
+  .badge {
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .bg-success {
+    background-color: #28a745;
+  }
+  
+  .bg-warning {
+    background-color: #ffc107;
+  }
+  
+  .bg-danger {
+    background-color: #dc3545;
+  }
+  
+  /* Interview details styling */
+  .interview-detail {
+    margin-bottom: 15px;
+  }
+  
+  .interview-detail p {
+    margin: 5px 0;
+  }
+  /* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  /* Fade-in-up animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Header Styling */
+  h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    animation: slideInLeft 0.8s ease;
+  }
+  
+  h2 i {
+    margin-right: 10px;
+  }
+  
+  /* Slide-in animation for the header */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* No Applications Message Styling */
+  .alert {
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    animation: fadeIn 1s ease;
+  }
+  
+  .alert-info {
+    background-color: #e9f7fe;
+    color: #0056b3;
+    border: 1px solid #b6e1f9;
+  }
+  
+  /* Applications Table Styling */
+  .table {
+    margin-top: 1.5rem;
+    animation: fadeIn 0.8s ease;
+    background-color: #fff;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .thead-dark th {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Interview Details Styling */
+  .interview-detail {
+    background-color: #f7f9fc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #007bff;
+    border-radius: 8px;
+    animation: fadeInDetail 0.8s ease;
+  }
+  
+  @keyframes fadeInDetail {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .interview-detail p {
+    margin: 0.2rem 0;
+  }
+  
+  .interview-detail strong {
+    color: #007bff;
+  }
+  
+  .interview-detail a {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .interview-detail a:hover {
+    color: #00376b;
+    text-decoration: none;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    .table {
+      font-size: 0.9rem;
+    }
+  
+    .badge {
+      font-size: 0.8rem;
+    }
+  }
+  

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <h2><i class="fas fa-briefcase"></i> Apply for Job</h2>
+  
+  <div *ngIf="jobId && jobSeekerProfileId">
+    <form (ngSubmit)="submitApplication()" #form="ngForm">
+      <div class="form-group mb-3">
+        <label for="coverLetter" class="form-label">
+          <i class="fas fa-file-alt"></i> Cover Letter
+        </label>
+        <textarea id="coverLetter" 
+                  [(ngModel)]="coverLetter" 
+                  name="coverLetter" 
+                  class="form-control" 
+                  rows="5" 
+                  placeholder="Why do you want to apply for this role?" 
+                  required 
+                  #coverLetterInput="ngModel"></textarea>
+        
+        <!-- Validation error message -->
+        <div *ngIf="coverLetterInput.invalid && coverLetterInput.touched" class="text-danger">
+          Cover letter is required.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+        <i class="fas fa-paper-plane"></i> Submit Application
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="!jobId || !jobSeekerProfileId">
+    <div class="alert alert-danger mt-3">
+      <i class="fas fa-exclamation-triangle"></i> Error: Job or Profile details missing. Please try again.
+    </div>
+  </div>
+</div>

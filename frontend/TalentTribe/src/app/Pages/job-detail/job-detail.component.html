@@ -1,0 +1,17 @@
+<div *ngIf="job && company" class="job-detail-tile animate-fade-in">
+  <div class="container">
+    <h2 class="job-title">{{ job.jobTitle }}</h2>
+    <p><strong>Company:</strong> {{ company.companyName }}</p>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Salary Range:</strong> {{ job.salaryRange }}</p>
+    <p><strong>Experience Level:</strong> {{ job.experienceLevel }}</p>
+    <p><strong>Job Description:</strong> {{ job.jobDescription }}</p>
+    <p><strong>Company Description:</strong> {{ company.companyDescription }}</p>
+    <p><strong>Website:</strong> <a [href]="company.websiteUrl" target="_blank">{{ company.websiteUrl }}</a></p>
+    <div class="button-container">
+      <button class="btn btn-primary" (click)="applyForJob()">
+        <i class="fas fa-paper-plane"></i> Apply
+      </button>
+    </div>
+  </div>
+</div>

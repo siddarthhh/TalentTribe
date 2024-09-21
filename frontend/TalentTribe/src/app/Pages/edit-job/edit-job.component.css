@@ -1,0 +1,96 @@
+/* General Container */
+.container {
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Headings */
+  h2 {
+    font-size: 1.75rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  /* Form Label Group */
+  .form-label-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-label-group label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-label-group i {
+    color: #007bff;
+    margin-left: auto;
+    font-size: 1.2rem;
+  }
+  
+  /* Input */
+  .form-control {
+    border-radius: 6px;
+    padding: 0.75rem;
+  }
+  
+  /* Button Styling */
+  .btn-primary {
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+  }
+  
+  /* Alert */
+  .alert {
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  
+  /* Spinner */
+  .spinner-border {
+    border-width: 0.3rem;
+    border-color: #007bff transparent transparent transparent;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .btn-primary {
+      padding: 0.5rem 0.8rem;
+    }
+  }
+  

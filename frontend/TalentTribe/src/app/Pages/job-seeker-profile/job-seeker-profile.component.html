@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <!-- Header with Profile Picture -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Jobseeker Dashboard</h2>
+    <img [src]="getProfilePictureUrl()" class="profile-img" alt="Profile Picture" width="100" height="100">
+  </div>
+
+  <!-- Profile Information -->
+  <ng-container *ngIf="isProfileComplete(); else incompleteProfile">
+    <!-- Profile Information Table -->
+    <table class="table table-striped table-bordered">
+      <tbody>
+        <tr>
+          <th>Full Name:</th>
+          <td>{{ jobSeekerProfile?.fullName }}</td>
+        </tr>
+        <tr>
+          <th>Skills:</th>
+          <td>{{ jobSeekerProfile?.skills }}</td>
+        </tr>
+        <tr>
+          <th>Experience:</th>
+          <td>{{ jobSeekerProfile?.experience }}</td>
+        </tr>
+        <tr>
+          <th>Education:</th>
+          <td>{{ jobSeekerProfile?.education }}</td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <td>{{ jobSeekerProfile?.address }}</td>
+        </tr>
+        <tr>
+          <th>Country:</th>
+          <td>{{ jobSeekerProfile?.country }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Action Buttons -->
+    <div class="mt-4">
+      <button class="btn btn-primary mr-3" (click)="viewResume()">View Resume</button>
+      <button class="btn btn-secondary" (click)="downloadResume()">Download Resume</button>
+    </div>
+  </ng-container>
+
+  <!-- Incomplete Profile Message -->
+  <ng-template #incompleteProfile>
+    <div class="alert alert-warning" role="alert">
+      You haven't updated your details yet. Please update your profile.
+    </div>
+  </ng-template>
+
+  <!-- Edit Profile Button (always shown) -->
+  <button class="btn btn-info mt-3" routerLink="/edit-jobseekerProfile">Edit Profile</button>
+</div>

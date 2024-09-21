@@ -1,0 +1,64 @@
+<div class="container mt-4">
+  <h2 class="mb-4">My Applications</h2>
+
+  <!-- No Applications Message -->
+  <div *ngIf="applications.length === 0" class="alert alert-info">
+    <p>You have not applied to any jobs yet.</p>
+  </div>
+
+  <!-- Applications Table -->
+  <div *ngIf="applications.length > 0">
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Job Title</th>
+          <th>Company</th>
+          <th>Status</th>
+          <th>Updates</th>
+          <th>Interview Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let application of applications">
+          <!-- Job Title -->
+          <td>{{ application.jobDetails?.jobTitle || 'N/A' }}</td>
+          <td>{{ application.jobDetails?.companyName || 'N/A' }}</td>
+          <!-- Application Status -->
+          <td>
+            <span [ngClass]="{
+              'badge': true,
+              'bg-success': application.status === 'Approved',
+              'bg-warning': application.status === 'Pending',
+              'bg-danger': application.status === 'Rejected'
+            }">
+              {{ application.status }}
+            </span>
+          </td>
+          
+          <!-- Updates -->
+          <td>{{ application.feedback || 'No updates provided' }}</td>
+          
+          <!-- Interview Details -->
+          <td>
+            <ng-container *ngIf="application.interviews && application.interviews.length > 0; else noInterview">
+              <div *ngFor="let interview of application.interviews">
+                <div class="interview-detail">
+                  <p><strong>Interview Date:</strong> {{ interview.interviewDate | date: 'short' }}</p>
+                  <p><strong>Feedback:</strong> {{ interview.interviewFeedback || 'No feedback yet' }}</p>
+                  <p><strong>Type:</strong> {{ interview.interviewType || 'Not specified' }}</p>
+                  <p><strong>Location:</strong> {{ interview.interviewLocation || 'Not specified' }}</p>
+                  <p *ngIf="interview.interviewLink">
+                    <strong>Link:</strong> <a [href]="interview.interviewLink" target="_blank">{{ interview.interviewLink }}</a>
+                  </p>
+                </div>
+              </div>
+            </ng-container>
+            <ng-template #noInterview>
+              <p>No interview scheduled</p>
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

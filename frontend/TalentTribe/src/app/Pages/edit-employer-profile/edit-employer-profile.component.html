@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <h2 class="section-heading">Edit Employer Profile</h2>
+  <form #employerProfileForm="ngForm" (ngSubmit)="onSubmit(employerProfileForm)" class="form-container">
+      <div class="form-group">
+          <label for="fullName">
+              <i class="fas fa-user"></i> Full Name
+          </label>
+          <input type="text" id="fullName" name="fullName" [(ngModel)]="employerProfile.fullName" class="form-control" />
+      </div>
+
+      <div class="form-group">
+          <label for="positionTitle">
+              <i class="fas fa-briefcase"></i> Position Title
+          </label>
+          <input type="text" id="positionTitle" name="positionTitle" [(ngModel)]="employerProfile.positionTitle" class="form-control" />
+      </div>
+
+      <div class="form-group">
+          <label for="department">
+              <i class="fas fa-building"></i> Department
+          </label>
+          <input type="text" id="department" name="department" [(ngModel)]="employerProfile.department" class="form-control" />
+      </div>
+
+      <div class="form-group">
+          <label for="workEmail">
+              <i class="fas fa-envelope"></i> Work Email
+          </label>
+          <input type="email" id="workEmail" name="workEmail" [(ngModel)]="employerProfile.workEmail" class="form-control" />
+      </div>
+
+      <div class="form-group">
+          <label for="workPhone">
+              <i class="fas fa-phone"></i> Work Phone
+          </label>
+          <input type="text" id="workPhone" name="workPhone" [(ngModel)]="employerProfile.workPhone" class="form-control" />
+      </div>
+
+      <!-- Other fields here -->
+
+      <button type="submit" class="btn btn-primary mt-3">Update Profile</button>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Application List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Job Seeker Name</th>
+          <th>Job Title</th>
+          <th>Submitted Date</th>
+          <th>Status</th>
+          <th>Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let application of applications">
+          <td>{{ application.jobSeekerProfile?.fullName }}</td>
+          <td>{{ application.job?.jobTitle }}</td>
+          <td>{{ application.submittedDate | date: 'shortDate' }}</td>
+          <td>
+            <span [ngClass]="{
+              'badge bg-success': application.status === 'Approved',
+              'badge bg-warning': application.status === 'Pending',
+              'badge bg-danger': application.status === 'Rejected'
+            }">
+              {{ application.status }}
+            </span>
+          </td>
+          <td>{{ application.job?.companyName }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

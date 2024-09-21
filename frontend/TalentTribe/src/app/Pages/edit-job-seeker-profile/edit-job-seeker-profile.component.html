@@ -1,0 +1,156 @@
+<div class="container mt-4">
+  <h2>Edit Job Seeker Profile</h2>
+  <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)" class="profile-form">
+    
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="fullName">Full Name:</label>
+        <i class="fas fa-user"></i>
+      </div>
+      <input
+        id="fullName"
+        class="form-control"
+        name="fullName"
+        [(ngModel)]="jobSeekerProfile.fullName"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="skills">Skills:</label>
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <textarea
+        id="skills"
+        class="form-control"
+        name="skills"
+        [(ngModel)]="jobSeekerProfile.skills"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="experience">Experience:</label>
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <textarea
+        id="experience"
+        class="form-control"
+        name="experience"
+        [(ngModel)]="jobSeekerProfile.experience"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="education">Education:</label>
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <textarea
+        id="education"
+        class="form-control"
+        name="education"
+        [(ngModel)]="jobSeekerProfile.education"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="address">Address:</label>
+        <i class="fas fa-home"></i>
+      </div>
+      <input
+        id="address"
+        class="form-control"
+        name="address"
+        [(ngModel)]="jobSeekerProfile.address"
+      />
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="city">City:</label>
+        <i class="fas fa-city"></i>
+      </div>
+      <input
+        id="city"
+        class="form-control"
+        name="city"
+        [(ngModel)]="jobSeekerProfile.city"
+      />
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="state">State:</label>
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <input
+        id="state"
+        class="form-control"
+        name="state"
+        [(ngModel)]="jobSeekerProfile.state"
+      />
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="country">Country:</label>
+        <i class="fas fa-globe"></i>
+      </div>
+      <input
+        id="country"
+        class="form-control"
+        name="country"
+        [(ngModel)]="jobSeekerProfile.country"
+      />
+    </div>
+
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="postalCode">Postal Code:</label>
+        <i class="fas fa-envelope"></i>
+      </div>
+      <input
+        id="postalCode"
+        class="form-control"
+        name="postalCode"
+        [(ngModel)]="jobSeekerProfile.postalCode"
+      />
+    </div>
+
+    <!-- Resume Upload -->
+    <div class="form-group">
+      <label for="resume" class="form-label">Resume (PDF)</label>
+      <input
+        type="file"
+        id="resume"
+        name="resume"
+        (change)="onFileSelected($event, 'resume')"
+        accept=".pdf"
+        class="form-control"
+      />
+      <p *ngIf="jobSeekerProfile.resumeUrl">Current Resume: {{ jobSeekerProfile.resumeUrl }}</p>
+    </div>
+
+    <!-- Profile Picture Upload -->
+    <div class="form-group">
+      <label for="profilePicture" class="form-label">Profile Picture (Image)</label>
+      <input
+        type="file"
+        id="profilePicture"
+        name="profilePicture"
+        (change)="onFileSelected($event, 'profilePicture')"
+        accept="image/*"
+        class="form-control"
+      />
+      <p *ngIf="jobSeekerProfile.profilePictureUrl">Current Picture: {{ jobSeekerProfile.profilePictureUrl }}</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Profile</button>
+  </form>
+</div>

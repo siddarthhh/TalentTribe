@@ -1,0 +1,64 @@
+<div class="container mt-4">
+  <ng-container *ngIf="loading; else content">
+    <div class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #content>
+    <div *ngIf="employerProfile">
+      <h1 class="mb-4">Employer Dashboard</h1>
+      
+      <div class="card p-4 shadow-sm mb-4">
+        <div class="d-flex align-items-center mb-3">
+          <i class="fas fa-user fa-2x text-primary me-3"></i>
+          <h3 class="mb-0">Profile Information</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <strong>Full Name:</strong> {{ employerProfile.fullName }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <strong>Position Title:</strong> {{ employerProfile.positionTitle }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <strong>Department:</strong> {{ employerProfile.department }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <strong>Work Email:</strong> {{ employerProfile.workEmail }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <strong>Work Phone:</strong> {{ employerProfile.workPhone }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <strong>Date Joined:</strong> {{ employerProfile.dateJoined | date }}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <button (click)="navigateToEditProfile()" class="btn btn-primary btn-lg">
+          <i class="fas fa-edit me-2"></i> Edit Profile
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger mt-4">
+      {{ error }}
+    </div>
+  </ng-template>
+</div>

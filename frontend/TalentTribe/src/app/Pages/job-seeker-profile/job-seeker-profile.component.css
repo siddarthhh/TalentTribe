@@ -1,0 +1,204 @@
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  /* Fade-in-up animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Header and Profile Image */
+  .d-flex {
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #007bff;
+    animation: slideInLeft 1s ease;
+  }
+  
+  /* Slide-in animation for the header */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Profile Image Styling */
+  .profile-img {
+    border-radius: 50%;
+    border: 4px solid #007bff;
+    width: 150px; /* Increased profile size */
+    height: 150px; /* Increased profile size */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    animation: bounceIn 1s ease;
+  }
+  
+  /* Bounce-in animation for profile picture */
+  @keyframes bounceIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.1);
+    border-color: #0056b3;
+  }
+  
+  /* Table Styling */
+  .table {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 1s ease;
+  }
+  
+  .table th {
+    font-weight: bold;
+    color: #007bff;
+    background-color: #f1f5f9;
+  }
+  
+  .table td {
+    color: #333;
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  /* Button Styling */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 15px; /* Space between buttons */
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-3px);
+  }
+  
+  .btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .btn-info:hover {
+    background-color: #138496;
+    transform: translateY(-3px);
+  }
+  
+  /* Added space between buttons */
+  .mt-4 > .btn {
+    margin-right: 20px; /* Adjusted button spacing */
+  }
+  
+  /* Alert Message */
+  .alert {
+    background-color: #ffc107;
+    color: #856404;
+    border-radius: 8px;
+    padding: 1rem;
+    font-weight: bold;
+    animation: shake 0.5s ease;
+  }
+  
+  /* Shake animation for warning message */
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .profile-img {
+      width: 120px; /* Adjusted size for smaller screens */
+      height: 120px; /* Adjusted size for smaller screens */
+    }
+  
+    .table th, .table td {
+      padding: 0.75rem;
+    }
+  
+    .btn {
+      padding: 0.65rem 1.25rem;
+    }
+  
+    /* Reduce button margin for smaller screens */
+    .mt-4 > .btn {
+      margin-right: 10px;
+    }
+  }
+  

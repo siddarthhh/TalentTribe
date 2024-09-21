@@ -1,0 +1,40 @@
+<div *ngIf="loading" class="loading-indicator">
+  <i class="fas fa-spinner fa-spin"></i> Loading jobs...
+</div>
+<div class="jobs-header">
+  <h2 class="jobs-title">Job Dashboard</h2>
+  <button class="btn btn-primary new-job-btn" routerLink="/new-job">+ New Job</button>
+</div>
+<div *ngIf="!loading && jobs?.length; else noJobs">
+
+  
+  <div class="jobs-container">
+    <div *ngFor="let job of jobs" class="job-tile">
+      <div class="tile-header">
+        <h3>{{ job.jobTitle }}</h3>
+        <span [ngClass]="getJobStatusClass(job.jobStatus)" class="status">{{ job.jobStatus }}</span>
+      </div>
+      <div class="tile-body">
+        <p><strong>Location:</strong> {{ job.location }}</p>
+        <p><strong>Description:</strong> {{ job.jobDescription }}</p>
+        <p><strong>Experience:</strong> {{ job.experienceLevel }}</p>
+        <p><strong>Company:</strong> {{ job.companyName }}</p>
+        <p><strong>Salary Range:</strong> {{ job.salaryRange }}</p>
+        <p><strong>Date Posted:</strong> {{ job.datePosted | date }}</p>
+        <p><strong>Application Deadline:</strong> {{ job.applicationDeadline | date }}</p>
+      </div>
+      <div class="tile-actions">
+        <button class="btn btn-warning btn-sm" [routerLink]="['/edit-job', job.jobId]">
+          <i class="fas fa-edit"></i> Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noJobs>
+  <div class="no-jobs-alert">
+    <i class="fas fa-exclamation-circle"></i> 
+    <span>{{ errorMessage || 'No jobs posted by you yet.' }}</span>
+  </div>
+</ng-template>

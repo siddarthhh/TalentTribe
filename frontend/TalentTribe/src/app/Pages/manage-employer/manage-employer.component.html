@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Employer List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Work Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employer of employers">
+          <td>{{ employer.fullName }}</td>
+          <td>{{ employer.positionTitle }}</td>
+          <td>{{ employer.department }}</td>
+          <td>{{ employer.workEmail }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteEmployer(employer.employerProfileId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,102 @@
+/* Container styling */
+.container {
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;  /* Fade-in effect for the container */
+  }
+  
+  /* Heading styling */
+  h2, h3 {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+  }
+  
+  h2 {
+    animation-delay: 0.2s; /* Slight delay for heading */
+  }
+  
+  h3 {
+    animation-delay: 0.4s; /* Slight delay for subheading */
+  }
+  
+  /* Table styling */
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .table-hover tbody tr {
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02); /* Slight scale on hover for table rows */
+  }
+  
+  /* Profile image styling */
+  .profile-img {
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;  /* Fade-in for the profile image */
+    animation-delay: 0.5s;
+  }
+  
+  /* Button styling with hover animation */
+  .btn {
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Button hover effect */
+    margin-bottom: 10px; /* Ensure buttons are not too close */
+  }
+  
+  .btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05); /* Scale up buttons slightly on hover */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #6c757d;
+  }
+  
+  /* Spacing and margin adjustments */
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .mr-3 {
+    margin-right: 1rem;
+  }
+  
+  .btn + .btn {
+    margin-left: 0.75rem;  /* Added margin between buttons */
+  }
+  
+  /* Textarea adjustment */
+  textarea.form-control {
+    resize: vertical;
+  }
+  
+  /* Fade-in animation keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* Slight upward movement */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Back to the original position */
+    }
+  }
+  

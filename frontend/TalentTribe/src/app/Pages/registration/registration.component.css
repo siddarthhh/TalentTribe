@@ -1,0 +1,151 @@
+/* General Page Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100%;
+    overflow: hidden; /* Prevent page scrolling */
+  }
+  
+  /* Registration Wrapper */
+  .register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+ 
+    overflow: hidden; /* Prevent wrapper from scrolling */
+  }
+  /* Registration Container */
+.register-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh; /* Limit the height of the container */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Adjusted Padding */
+  .register-form-container {
+    flex: 1;
+    padding: 0.5rem; /* Reduced padding for form container */
+  }
+  
+  
+  /* Left Image Styling */
+  .register-image {
+    flex: .75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+  
+  }
+  
+  .register-image img {
+    max-width: 100%;
+  
+
+  }
+  
+  /* Right Side - Form Container */
+  .register-form-container {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* Prevent scrolling on the container */
+  }
+  
+  /* Scrollable Form */
+  .form-scroll {
+    max-height: 60vh; /* Set a fixed height for the form container */
+    overflow-y: auto; /* Enable vertical scrolling only inside the form */
+    padding-right: 0.5rem; /* Avoid content touching the scrollbar */
+  }
+  
+  /* Hide default scrollbar (optional) */
+  .form-scroll::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .form-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track color */
+  }
+  
+  .form-scroll::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 10px;
+  }
+  
+  .form-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Logo Styling */
+  .register-logo .logo-img {
+    width: 200px;
+    height: auto;
+    
+  }
+  
+  /* Form Styling */
+  h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: .5rem;
+  }
+  
+  .form-group {
+    margin-bottom: .2rem;
+  }
+  
+  .form-control {
+    padding: 0.5rem; /* Reduced padding */
+    font-size: 0.475rem; /* Smaller font size */
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+  }
+  .btn {
+  padding: 0.2rem 0.4rem; /* Reduced padding for smaller button size */
+  font-size: 0.675rem; /* Smaller font size */
+  border-radius: 4px; /* Slightly smaller border radius */
+
+}
+
+
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.2rem 0.4rem; /* Reduced padding for smaller button size */
+    font-size: 0.675rem; /* Smaller font size */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  p {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  

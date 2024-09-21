@@ -1,0 +1,82 @@
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Table Styling */
+  .table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  /* Hover Effect on Rows */
+  .table-striped tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+  }
+  
+  /* Job Status Badges */
+  .badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+  
+  .bg-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .bg-warning {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .bg-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeInTable {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .table {
+    animation: fadeInTable 0.6s ease-in-out;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .table {
+      font-size: 0.9rem;
+    }
+    
+    .badge {
+      font-size: 0.8rem;
+    }
+  }
+  

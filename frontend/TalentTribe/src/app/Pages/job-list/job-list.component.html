@@ -1,0 +1,128 @@
+<div class="container-fluid body-background">
+  <div class="container pt-3">
+    <div class="row">
+      <!-- Filter Section -->
+      <div class="col-12 col-md-4 col-lg-3 filter mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h6 class="text-center mb-4">Filter Jobs</h6>
+            <form (ngSubmit)="applyFilters()">
+              <!-- Job Title Filter -->
+              <div class="form-group mb-3">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" class="form-control" [(ngModel)]="filters.jobTitle" name="jobTitle">
+              </div>
+
+              <!-- Experience Level Filter -->
+              <div class="form-group mb-3">
+                <label for="experienceLevel">Experience Level</label>
+                <select id="experienceLevel" class="form-control" [(ngModel)]="filters.experienceLevel" name="experienceLevel">
+                  <option value="" disabled>Select experience level</option>
+                  <option value="Entry Level (0-1 year)">Entry Level (0-1 year)</option>
+                  <option value="Mid Level (2-5 years)">Mid Level (2-5 years)</option>
+                  <option value="Senior Level (5-10 years)">Senior Level (5-10 years)</option>
+                  <option value="Manager (10-15 years)">Manager (10-15 years)</option>
+                  <option value="Director (15+ years)">Director (15+ years)</option>
+                </select>
+              </div>
+
+              <!-- Company Name Filter -->
+              <div class="form-group mb-3">
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" class="form-control" [(ngModel)]="filters.companyName" name="companyName" placeholder="Enter company name">
+              </div>
+
+              <!-- Salary Range Filter -->
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label for="minSalary">Min Salary</label>
+                  <input type="number" id="minSalary" class="form-control" [(ngModel)]="filters.minSalary" name="minSalary">
+                </div>
+                <div class="col-6">
+                  <label for="maxSalary">Max Salary</label>
+                  <input type="number" id="maxSalary" class="form-control" [(ngModel)]="filters.maxSalary" name="maxSalary">
+                </div>
+              </div>
+
+              <!-- Location Filter -->
+              <div class="form-group mb-3">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control" [(ngModel)]="filters.location" name="location">
+              </div>
+
+              <!-- Employment Type Filter -->
+              <div class="form-group mb-3">
+                <label for="employmentType">Employment Type</label>
+                <select id="employmentType" class="form-control" [(ngModel)]="filters.employmentType" name="employmentType">
+                  <option value="">Any</option>
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                  <option value="Contract">Contract</option>
+                </select>
+              </div>
+
+              <!-- Job Status Filter -->
+              <div class="form-group mb-3">
+                <label for="jobStatus">Job Status</label>
+                <select id="jobStatus" class="form-control" [(ngModel)]="filters.jobStatus" name="jobStatus">
+                  <option value="">Any</option>
+                  <option value="Open">Open</option>
+                  <option value="Closed">Closed</option>
+                </select>
+              </div>
+
+              <!-- Error Message for Validation -->
+              <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+              <!-- Apply Filter Button -->
+              <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Listings Section -->
+      <div class="col-12 col-md-8 col-lg-9 job">
+        <div class="row">
+          <div class="col-12" *ngFor="let job of filteredJobs">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-8">
+                    <h5>{{ job.jobTitle }}</h5>
+                    <p class="text-muted mb-1"><i class="fa fa-building" aria-hidden="true"></i> Company: {{ job.companyName }}</p>
+                    <p class="text-muted mb-1"><i class="fa fa-suitcase" aria-hidden="true"></i> Experience: {{ job.experienceLevel }}</p>
+                  </div>
+                  <div class="col-4 text-end">
+                    <span class="badge bg-success">{{ job.jobStatus }}</span>
+                  </div>
+                </div>
+
+                <div class="row mt-2">
+                  <div class="col-4">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Location: {{ job.location }}
+                  </div>
+                  <div class="col-4">
+                    <i class="fa fa-dollar" aria-hidden="true"></i> Salary: {{ job.salaryRange }}
+                  </div>
+                </div>
+
+                <div class="row mt-2">
+                  <div class="col-12">
+                    <i class="fa fa-file-text" aria-hidden="true"></i> Description: <span>{{ job.jobDescription | slice:0:100 }}...</span>
+                  </div>
+                </div>
+
+                <div class="row mt-3">
+                  <div class="col-12 text-start">
+                    <button class="btn btn-primary" [routerLink]="['/job-detail', job.jobId, job.employerProfileId]">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

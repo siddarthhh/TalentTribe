@@ -1,0 +1,233 @@
+/* General Styles */
+
+
+.container {
+    max-width: 1200px; /* Limit the container width */
+}
+
+/* Card Styles */
+.card {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Filter Section Styles */
+.filter h6 {
+    font-weight: bold;
+    color: #495057;
+}
+
+.filter .form-group label {
+    font-weight: 500;
+    color: #495057;
+}
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+.filter .form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da; /* Light border */
+}
+
+.filter .btn {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Job Listings Section Styles */
+.job .card {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.job .card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.job .card-body {
+    padding: 15px;
+}
+
+.job h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.job p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.job .text-muted {
+    color: #6c757d !important;
+}
+
+/* Job Meta Information */
+.job i {
+    color: #007bff;
+    margin-right: 5px;
+}
+
+.job .badge {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+}
+
+.job .btn {
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.job .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.job .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .filter {
+        margin-bottom: 20px;
+    }
+
+    .job .card {
+        margin-bottom: 15px;
+    }
+
+    .job h5 {
+        font-size: 1.1rem;
+    }
+
+    .job p {
+        font-size: 0.85rem;
+    }
+
+    .job .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .job .col-6.text-end {
+        text-align: left;
+        margin-top: 10px;
+    }
+}
+/* Body Background */
+
+  
+  /* Container Styling */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Filter Card Styling */
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Filter Form Styling */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  h6 {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Alert Message Styling */
+  .alert {
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  
+  /* Job Listings Card Styling */
+  .card.mb-3 {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s;
+  }
+  
+  /* Job Listings Card Hover Effect */
+  .card.mb-3:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Job Title Styling */
+  h5 {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Job Details Icon Styling */
+  .text-muted {
+    color: #6c757d;
+  }
+  
+  /* Badge Styling */
+  .badge {
+    font-size: 0.9rem;
+  }
+  
+  /* Button Styling */
+  .btn {
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .card {
+      margin-bottom: 1rem;
+    }
+    
+    .filter {
+      margin-bottom: 2rem;
+    }
+  }
+  

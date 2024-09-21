@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-white bg-white animate-fade-in">
+  <div class="container">
+    <a class="navbar-brand" >
+      <img src="../../public/assets/logo.png" 
+           alt="TalentTribe Logo" 
+           class="d-inline-block align-text-top" 
+           style="width: 250px; height: auto; padding: 0px; border-radius: 8px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Common links for all authenticated users -->
+        <li class="nav-item" *ngIf="isJobSeeker()">
+          <a class="nav-link active" aria-current="page" routerLink="/job-list">Jobs</a>
+        </li>
+
+        <!-- Show specific links based on roles -->
+        <li class="nav-item" *ngIf="isJobSeeker()">
+          <a class="nav-link" routerLink="/jobseeker-app">Applications</a>
+        </li>
+        <li class="nav-item" *ngIf="isJobSeeker()">
+          <a class="nav-link" routerLink="/jobseeker-profile">Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="isJobSeeker()">
+          <a class="nav-link" routerLink="/credentials-dashboard">Credentials</a>
+        </li>
+        <li class="nav-item" *ngIf="isEmployer()">
+          <a class="nav-link" routerLink="/employer-dashboard">Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="isEmployer()">
+          <a class="nav-link" routerLink="/company-dashboard">Company</a>
+        </li>
+        <li class="nav-item" *ngIf="isEmployer()">
+          <a class="nav-link" routerLink="/application-dashboard">Applications</a>
+        </li>
+        <li class="nav-item" *ngIf="isEmployer()">
+          <a class="nav-link" routerLink="/employer-job">Jobs</a>
+        </li>
+        
+        
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" routerLink="/admin-metrics">Metrics</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" routerLink="/manage-employer">Employer</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" routerLink="/manage-jobseeker">JobSeeker</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" routerLink="/manage-jobs">Jobs</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" routerLink="/manage-applications">Applications</a>
+        </li>
+        
+        
+      </ul>
+
+      <!-- Right side (Login/Register or Welcome + Logout) -->
+      <form class="d-flex">
+        <!-- Show Login/Register if user is not authenticated -->
+        <ng-container *ngIf="!isAuthenticated(); else loggedInTemplate">
+          <button class="btn btn-outline-primary mx-2" (click)="goToLogin()">Login</button>
+          <button class="btn btn-success" (click)="goToRegister()">Register</button>
+        </ng-container>
+
+        <!-- Show Welcome, Username, Role, and Logout if authenticated -->
+        <ng-template #loggedInTemplate>
+          <span class="navbar-text me-2">
+            Welcome, {{ getUsername() }} [{{ getUserRole() }}]
+          </span>
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+</nav>

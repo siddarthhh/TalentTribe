@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Job Seeker List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Skills</th>
+          <th>Experience</th>
+          <th>Education</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let jobSeeker of jobSeekers">
+          <td>{{ jobSeeker.fullName }}</td>
+          <td>{{ jobSeeker.skills }}</td>
+          <td>{{ jobSeeker.experience }}</td>
+          <td>{{ jobSeeker.education }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteJobSeeker(jobSeeker.jobSeekerProfileId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
